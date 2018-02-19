@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Flatpak</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/material/styles/screen-16x10.css">
+    <link href="prism/prism.css" rel="stylesheet" />
+    <style>
+        .qrcode {
+            width: 40%;
+            margin: 0 auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .qrcode.cover {
+            position: absolute;
+            right: -300px;
+            top: 100px;
+            width: 80px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        #see-more {
+            text-align: center;
+        }
+
+        .slide {
+            background-color: #397004;
+            color: #eee;
+        }
+
+        .slide h2 {
+            color: white;
+        }
+        .slide p.note, .slide pre .comment {
+            color: #ddd;
+        }
+
+        .slide code {
+            padding: 0;
+        }
+
+        .slide .shout::after {
+            position: absolute;
+            top: -300%;
+            right: 0;
+            bottom: -300%;
+            left: 0;
+            z-index: -1;
+            background: #397004 -webkit-linear-gradient(315deg,#397004 50%,#2f4e31 50%) no-repeat;
+            background: #397004 linear-gradient(135deg,#397004 50%,#2f4e31 50%) no-repeat;
+            content: '';
+        }
+
+        .flatpak-logo {
+            background-color: white;
+            background-image: url('pictures/flatpak.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            border-radius: 3px;
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+        }
+
+        .two-columns ul.column-1 {
+            font-size: large;
+        }
+
+        .two-columns .column-1 {
+            float: left;
+            width: 48%;
+            font-size: small;
+        }
+        .two-columns .column-2 {
+            float: right;
+            width: 48%;
+            font-size: small;
+        }
+
+        .small {
+            font-size: small;
+        }
+    </style>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Introducción a Flatpak</h1>
+        <p>wadobo.com</p>
+    </header>
+    <section class="slide" id="cover">
+        <h2>Introducción a Flatpak</h2>
+        <p>Rafael Arellano (@rarellano)</p>
+        <p>&lt;rarellano@wadobo.com&gt;</p>
+        <p>http://wadobo.com</p>
+        <div class="flatpak-logo"> </div>
+        <img src="pictures/slide-bg.png" alt="" class="cover">
+        <img src="pictures/wado_qrcode.gif" alt="" class="qrcode cover">
+        <!--
+            To apply styles to the certain slides
+            set slide ID to get needed elements
+            -->
+        <style>
+            #cover h2 {
+                margin:30px 0 0;
+                color:#FFF;
+                text-align:center;
+                font-size:70px;
+                }
+            #cover p {
+                margin:10px 0 0;
+                text-align:center;
+                color:#FFF;
+                font-style:italic;
+                font-size:20px;
+            }
+            #cover p a {
+                color:#FFF;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="">
+        <h2>¿Que es Flatpak?</h2>
+        <ul>
+            <li>Apps empaquetadas independientes de la distribución</li>
+            <li>Entornos consistentes</li>
+            <li>Apps en sandboxes</li>
+            <li>Pensado para el escritorio</li>
+        <ul>
+    </section>
+    <section class="slide">
+        <h2>¿Como funciona?</h2>
+        <img src="pictures/como-funciona.svg" height="65%" alt="" class="">
+    </section>
+    <section class="slide">
+        <h3>Añadir repo:</h3>
+        <pre>
+            <code class="language-json" data-output="2">
+            
+$ flatpak remote-add flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+            </code>
+        </pre>
+    </section>
+    <section class="slide">
+        <h2>Busca!</h2>
+        <pre>
+            <code class="language-json" data-output="2">
+            
+$ flatpak search gimp
+Application ID Version Branch Remotes Description                        
+org.gimp.GIMP          stable flathub Cree imágenes y edite fotografías
+            </code>
+        </pre>
+    </section>
+     <section class="slide">
+        <h2>Instalar y desinstalar:</h2>
+        <pre>
+            <code class="language-json" data-output="2">
+            
+$ flatpak install flathub gimp
+$ flatpak uninstall gimp
+            </code>
+        </pre>
+    </section>
+    <section class="slide">
+        <h2>¡Empaquetando!</h2>
+        <pre>
+            <ul>
+                <li>Runtime y Sdk</li>
+                <li>Manifest</li>
+                <li>Contruir</li>
+                <li>Añadir al repo</li>
+                <li>Instalar la app</li>
+                <li>Lanzar la app</li>
+            </ul>
+        </pre>
+    </section>
+
+
+    <section class="slide" id="see-more">
+        <img src="pictures/wado_qrcode.gif" alt="" class="qrcode">
+        https://wadobo.com<br/>
+        rarellano@wadobo.com<br/>
+        https://flatpak.org/<br/>
+    </section>
+    <div class="progress"></div>
+    <script src="shower/shower.min.js"></script>
+    <script src="prism/prism.js"></script>
+</body>
+</html>
